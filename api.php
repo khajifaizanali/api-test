@@ -7,8 +7,9 @@ $incoming=$_POST['incoming_message'];
 $file = "https://api.covid19api.com/summary";
 $data = file_get_contents($file);
 $result = json_decode($data, true);
-$obj=$result['Countries'];
+$obj=$result["Countries"];
 foreach($obj as $key => $value) {
+    echo $lower;
     if(strtolower($incoming)==$value["Slug"]){
     $message="New cases ".(string)$value["NewConfirmed"]."\n Total confirmed cases".(string)$value["TotalConfirmed"];
     }    
