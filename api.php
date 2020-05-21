@@ -3,6 +3,7 @@ $bot_id = $_POST['bot_id'];
 $user_id = $_POST['user_id'];
 $module_id = $_POST['module_id'];
 $channel = $_POST['channel'];
+$incoming=$_POST['incoming_message'];
 $file = "https://api.covid19api.com/summary";
 $data = file_get_contents($file);
 $result = json_decode($data, true);
