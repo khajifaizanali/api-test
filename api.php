@@ -15,6 +15,7 @@ foreach($obj as $key => $value) {
     echo "\n";
     if(strcmp(strtolower($incoming),$value["Slug"])==0){
     $message=$message."New cases ".(string)$value["NewConfirmed"]."\n Total confirmed cases".(string)$value["TotalConfirmed"];
+        break;
     }    
 }
 $new=(string)$result["Global"]["NewConfirmed"];
