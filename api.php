@@ -1,3 +1,4 @@
+<?php
 $bot_id = $_POST['bot_id'];
 $user_id = $_POST['user_id'];
 $module_id = $_POST['module_id'];
@@ -15,3 +16,4 @@ $response = [
 ];
 echo json_encode($response);
 die();
+?>
