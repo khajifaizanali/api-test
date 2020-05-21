@@ -16,7 +16,7 @@ foreach($obj as $key => $value) {
 }
 $new=(string)$result["Global"]["NewConfirmed"];
 $total=(string)$result["Global"]["TotalConfirmed"];
-$message = $messages."\nGlobal Report:\nNew cases confirmed are ".$new."\ntotal number of cases are ".$total.$channel.$module_id;
+$message = $messages."\nGlobal Report:\nNew cases confirmed are ".$new."\ntotal number of cases are ".$total.$channel.$module_id.$incoming;
 $suggestedReplies = ["India","canada","Indonesia"];
 header ('Content-Type: application/json');
 $response = [
