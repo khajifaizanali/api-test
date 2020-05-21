@@ -4,14 +4,14 @@ $user_id = $_POST['user_id'];
 $module_id = $_POST['module_id'];
 $channel = $_POST['channel'];
 $incoming=$_POST['incoming_message'];
-$incoming='India'
+$incoming='India';
 $file = "https://api.covid19api.com/summary";
 $data = file_get_contents($file);
 $result = json_decode($data, true);
 $obj=$result["Countries"];
 foreach($obj as $key => $value) {
     $message=$incoming;
-    if(strtolower($incoming)==$value["Slug"]){
+    if(strcmp(strtolower($incoming),$value["Slug"])){
     $message=$message."New cases ".(string)$value["NewConfirmed"]."\n Total confirmed cases".(string)$value["TotalConfirmed"];
     }    
 }
