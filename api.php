@@ -10,7 +10,7 @@ $result = json_decode($data, true);
 $obj=$result["Countries"];
 foreach($obj as $key => $value) {
     if(strcmp(strtolower($incoming),$value["Slug"])==0){
-    $message=$incoming." New cases ".(string)$value["NewConfirmed"]."\n Total confirmed cases".(string)$value["TotalConfirmed"];
+    $message=$incoming." New cases ".(string)$value["NewConfirmed"]."\nTotal confirmed cases".(string)$value["TotalConfirmed"];
         break;
     }    
 }
