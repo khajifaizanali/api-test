@@ -4,6 +4,7 @@ $user_id = $_POST['user_id'];
 $module_id = $_POST['module_id'];
 $channel = $_POST['channel'];
 $incoming=$_POST['incoming_message'];
+$incoming='India'
 $file = "https://api.covid19api.com/summary";
 $data = file_get_contents($file);
 $result = json_decode($data, true);
