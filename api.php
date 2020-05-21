@@ -9,9 +9,9 @@ $data = file_get_contents($file);
 $result = json_decode($data, true);
 $obj=$result["Countries"];
 foreach($obj as $key => $value) {
-    echo $value["Slug"];
+    $message=$incoming;
     if(strtolower($incoming)==$value["Slug"]){
-    $message="New cases ".(string)$value["NewConfirmed"]."\n Total confirmed cases".(string)$value["TotalConfirmed"];
+    $message=$message."New cases ".(string)$value["NewConfirmed"]."\n Total confirmed cases".(string)$value["TotalConfirmed"];
     }    
 }
 $new=(string)$result["Global"]["NewConfirmed"];
