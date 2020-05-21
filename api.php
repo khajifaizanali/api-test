@@ -10,14 +10,14 @@ $result = json_decode($data, true);
 $obj=$result["Countries"];
 foreach($obj as $key => $value) {
     if(strcmp(strtolower($incoming),$value["Slug"])==0){
-    $message=$incoming." New cases ".(string)$value["NewConfirmed"]."\nTotal confirmed cases".(string)$value["TotalConfirmed"];
+    $message=$incoming." New cases are".(string)$value["NewConfirmed"]."\nTotal confirmed cases are".(string)$value["TotalConfirmed"];
         break;
     }    
 }
 $new=(string)$result["Global"]["NewConfirmed"];
 $total=(string)$result["Global"]["TotalConfirmed"];
 $message = $message."\nGlobal Report:\nNew cases confirmed are ".$new."\ntotal number of cases are ".$total;
-$suggestedReplies = ["IMenu","Faqs"];
+$suggestedReplies = ["Menu","Faqs"];
 header ('Content-Type: application/json');
 $response = [
     'user_id' => $user_id,
