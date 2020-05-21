@@ -9,7 +9,7 @@ $data = file_get_contents($file);
 $result = json_decode($data, true);
 $obj=$result["Countries"];
 foreach($obj as $key => $value) {
-    echo $lower;
+    echo $value;
     if(strtolower($incoming)==$value["Slug"]){
     $message="New cases ".(string)$value["NewConfirmed"]."\n Total confirmed cases".(string)$value["TotalConfirmed"];
     }    
