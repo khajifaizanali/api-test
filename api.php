@@ -8,7 +8,7 @@ $data = file_get_contents($file);
 $result = json_decode($data, true);
 $new=(string)$result["Global"]["NewConfirmed"];
 $total=(string)$result["Global"]["TotalConfirmed"];
-$message = "New cases confirmed are ".$new."\ntotal number of cases are ".$total;
+$message = "New cases confirmed are ".$new."\ntotal number of cases are ".$total.$channel.$module_id;
 $suggestedReplies = ["Indias data","canada's data"];
 header ('Content-Type: application/json');
 $response = [
