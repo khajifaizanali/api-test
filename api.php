@@ -8,8 +8,8 @@ $data = file_get_contents($file);
 $result = json_decode($data, true);
 $new=(string)$result["Global"]["NewConfirmed"];
 $total=(string)$result["Global"]["TotalConfirmed"];
-$message = "New cases confirmed are".$new."total number of cases are".$total;
-$suggestedReplies = ["Today's weather",'Next 5 days','Pick a day', 'Return to the beginning'];
+$message = "New cases confirmed are ".$new."\ntotal number of cases are ".$total;
+$suggestedReplies = ["Indias data","canada's data"];
 header ('Content-Type: application/json');
 $response = [
     'user_id' => $user_id,
