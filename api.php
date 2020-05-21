@@ -12,6 +12,7 @@ $obj=$result["Countries"];
 foreach($obj as $key => $value) {
     $message=$incoming;
     echo strcmp(strtolower($incoming),$value["Slug"]);
+    echo "\n";
     if(strcmp(strtolower($incoming),$value["Slug"])==0){
     $message=$message."New cases ".(string)$value["NewConfirmed"]."\n Total confirmed cases".(string)$value["TotalConfirmed"];
     }    
