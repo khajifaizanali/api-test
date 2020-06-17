@@ -7,7 +7,6 @@ $incoming=$_POST['incoming_message'];
 $file = "https://api.covid19api.com/summary";
 $data = file_get_contents($file);
 $result = json_decode($data, true);
-echo $incoming;
 $obj=$result["Countries"];
 foreach($obj as $key => $value) {
     if(strcmp(strtolower($incoming),$value["Slug"])==0){
