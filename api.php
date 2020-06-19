@@ -6,7 +6,6 @@ $channel = $_POST['channel'];
 $state=$_POST['state'];
 
 $country=$_POST["Country"];
-if(strcmp(strtolower($country),"india")==0){
 $file = "https://api.rootnet.in/covid19-in/stats/latest";
 $data = file_get_contents($file);
 $result = json_decode($data, true);
@@ -23,7 +22,6 @@ foreach($obj as $key => $value) {
         $stdeat=$value["deaths"];
         break;
     }    
-}
 }
 $message = $country."Report:\ntotal cases confirmed are ".$total."\nTotal Indian Cases confirmed are are ".$ci."\nTotal Foriegn Cases confirmed are ".$cf."\nTotal Number of People Discharged are ".$dis."\nTotal Number of Deaths are ".$dea;
 $message = $message."\n".$state."\nReport:\nTotal Cases Confirmed are ".$stcon."\nTotal cases Discharged are ".$stdis."\nTotal Deaths are ".$stdeat;
