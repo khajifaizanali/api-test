@@ -24,7 +24,7 @@ foreach($obj as $key => $value) {
     }    
 }
 $message = $country."Report:\ntotal cases confirmed are ".$total."\nTotal Indian Cases confirmed are are ".$ci."\nTotal Foriegn Cases confirmed are ".$cf."\nTotal Number of People Discharged are ".$dis."\nTotal Number of Deaths are ".$dea;
-$message = $message."\n".$state."\nReport:\nTotal Cases Confirmed are ".$stcon."\nTotal cases Discharged are ".$stdis."\nTotal Deaths are ".$stdeat;
+// $message = $message."\n".$state."\nReport:\nTotal Cases Confirmed are ".$stcon."\nTotal cases Discharged are ".$stdis."\nTotal Deaths are ".$stdeat;
 $suggestedReplies = ["Menu","Faqs"];
 header ('Content-Type: application/json');
 $response = [
