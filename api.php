@@ -3,10 +3,8 @@ $bot_id = $_POST['bot_id'];
 $user_id = $_POST['user_id'];
 $module_id = $_POST['module_id'];
 $channel = $_POST['channel'];
-$incoming=$_POST['incoming_message'];
-$file = "https://api.covid19api.com/summary";
-$data = file_get_contents($file);
-$result = json_decode($data, true);
+$state=$_POST['state'];
+
 $obj=$result["Countries"];
 foreach($obj as $key => $value) {
     if(strcmp(strtolower($incoming),$value["Slug"])==0){
@@ -14,9 +12,28 @@ foreach($obj as $key => $value) {
         break;
     }    
 }
-$new=(string)$result["Global"]["NewConfirmed"];
-$total=(string)$result["Global"]["TotalConfirmed"];
-$message = $message."\nGlobal Report:\nNew cases confirmed are ".$new."\ntotal number of cases are ".$total;
+if(strcmp(strtolower($incoming),"india")==0){
+$country=$_POST['country'];
+$file = "https://api.rootnet.in/covid19-in/stats/latest";
+$data = file_get_contents($file);
+$result = json_decode($data, true);
+$total=(string)$result["data"]["summary"]["total"];
+$ci=(string)$result["data"]["summary"]["confirmedCasesIndian"];
+$cf=(string)$result["data"]["summary"]["confirmedCasesForeign"];
+$dis=(string)$result["data"]["summary"]["discharged"];
+$dea=(string)$result["data"]["summary"]["deaths"];
+$obj=(string)$result["data"]["regional"];
+foreach($obj as $key => $value) {
+    if(strcmp(strtolower($state),strtolower($value["loc"]))==0){
+        $stcon=$value["confirmedCasesIndian"];
+        $stdis=$value["discharged"];
+        $stdeat=$value["deaths"];
+        break;
+    }    
+}
+}
+$message = $Country."Report:\ntotal cases confirmed are ".$total."\nTotal Indian Cases confirmed are are ".$ci."\nTotal Foriegn Cases confirmed are ".$cf."\nTotal Number of People Discharged are ".$dis."\nTotal Number of Deaths are ".$dea;
+$message = $message."\n".$state."\nReport:\nTotal Cases Confirmed are ".$stcon."\nTotal cases Discharged are ".$stdis."\nTotal Deaths are ".$stdeat;
 $suggestedReplies = ["Menu","Faqs"];
 header ('Content-Type: application/json');
 $response = [
