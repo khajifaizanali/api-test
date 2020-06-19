@@ -31,7 +31,7 @@ $response = [
     'user_id' => $user_id,
     'bot_id' => $bot_id,
     'module_id' => $module_id,
-    'message' => $message,
+    'message' => 'hello',
     'suggested_replies' => $suggestedReplies,
     'blocked_input' => false
 ];
