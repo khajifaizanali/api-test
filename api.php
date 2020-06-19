@@ -25,7 +25,7 @@ $channel = $_POST['channel'];
 // }
 // $message = $country."Report:\ntotal cases confirmed are ".$total."\nTotal Indian Cases confirmed are are ".$ci."\nTotal Foriegn Cases confirmed are ".$cf."\nTotal Number of People Discharged are ".$dis."\nTotal Number of Deaths are ".$dea;
 // $message = $message."\n".$state."\nReport:\nTotal Cases Confirmed are ".$stcon."\nTotal cases Discharged are ".$stdis."\nTotal Deaths are ".$stdeat;
-$suggestedReplies = ["Menu","Faqs"];
+$suggestedReplies = ["Menu","Faqs","Hello"];
 header ('Content-Type: application/json');
 $response = [
     'user_id' => $user_id,
