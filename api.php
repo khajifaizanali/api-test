@@ -5,15 +5,8 @@ $module_id = $_POST['module_id'];
 $channel = $_POST['channel'];
 $state=$_POST['state'];
 
-$obj=$result["Countries"];
-foreach($obj as $key => $value) {
-    if(strcmp(strtolower($incoming),$value["Slug"])==0){
-    $message=$incoming." New cases are".(string)$value["NewConfirmed"]."\nTotal confirmed cases are".(string)$value["TotalConfirmed"];
-        break;
-    }    
-}
-if(strcmp(strtolower($incoming),"india")==0){
-$country=$_POST['country'];
+$country=$_POST["Country"];
+if(strcmp(strtolower($country),"india")==0){
 $file = "https://api.rootnet.in/covid19-in/stats/latest";
 $data = file_get_contents($file);
 $result = json_decode($data, true);
